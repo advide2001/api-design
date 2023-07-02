@@ -13,7 +13,7 @@
 // });
 
 // WITH EXPRESS
-const app = require("./server");
+import app from "./server.js";
 
 app.listen(3001, () => {
   console.log("hello on port http://localhost:3001");
