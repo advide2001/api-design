@@ -1,5 +1,6 @@
 import express from "express";
 import router from "./router";
+import { protect } from "./modules/auth";
 import morgan from "morgan";
 
 const app = express();
@@ -23,6 +24,6 @@ app.get("/", (req, res) => {
   res.json({ message: "hello adarsh" });
 });
 
-app.use("/api", router);
+app.use("/api", protect, router);
 
 export default app;
